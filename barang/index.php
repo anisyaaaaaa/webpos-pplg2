@@ -27,14 +27,29 @@ if ($msg == 'deleted'){
     $id = $_GET['id'];
     $gbr = $_GET['gbr'];
     delete($id, $gbr);
-    $alert = 
-    "<script>
+    $alert =  "<script>
     $(document).ready(function() {
-    $(document).toasts('create', {
+    $(document).Toasts('create', {
     title : 'Sukses',
     body : 'Data barang berhasil dihapus dari database',
     class : 'bg-succes',
     icon : 'fas fa-check-circle'
+})
+});
+    </script>";
+}
+
+if ($msg == 'updated') {
+   
+    $alert =  "<script>
+    $(document).ready(function() {
+    $(document).Toasts('create', {
+    title : 'Sukses',
+    body : 'Data barang berhasil diperbarui',
+    class : 'bg-succes',
+    icon : 'fas fa-check-circle'
+    autohide : true,
+    delay : 5000,
 })
 });
     </script>";
@@ -99,7 +114,7 @@ if ($msg == 'deleted'){
                                     <td><?= $b['harga_jual'] ?></td>
                                     
                                     <td>
-                                        
+                                        <a href="form-barang.php?id=<?= $b['id_barang'] ?>&msg=update" class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></a>
                                         <a href="?id=<?= $b['id_barang'] ?>&gbr=<?= $b['gambar'] ?>&msg=deleted"
                                             class="btn btn-sm btn-danger" onclick="return confirm('Anda yakin akan menghapus barang ini?')"><i
                                                 class="fas fa-trash"></i></a>

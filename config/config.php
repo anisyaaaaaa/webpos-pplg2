@@ -4,7 +4,7 @@ date_default_timezone_set('Asia/Jakarta');
 $host = 'localhost';
 $user = 'root';
 $pass = '';
-$dbname = 'webpos-pplg2';
+$dbname = 'webpos-pplg3';
 
 $koneksi = mysqli_connect($host, $user, $pass, $dbname);
 
@@ -15,4 +15,4 @@ $koneksi = mysqli_connect($host, $user, $pass, $dbname);
 // echo "berhasil koneksi ke database";
 // }
 
-$main_url = 'http://localhost/webpos-pplg2/';
+$main_url = 'http://localhost/webpos-pplg3/';
